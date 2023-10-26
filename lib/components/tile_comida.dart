@@ -22,8 +22,8 @@ class TileComida extends StatelessWidget {
         color: colorTextoPrimario,
         borderRadius: BorderRadius.circular(20),
       ),
-      margin: EdgeInsets.fromLTRB(50, 0, 50, 25),
-      padding: EdgeInsets.only(top: 15),
+      margin: const EdgeInsets.fromLTRB(50, 0, 50, 25),
+      padding: const EdgeInsets.only(top: 15),
       child: Column(
         children: [
           Image.asset(
@@ -40,10 +40,10 @@ class TileComida extends StatelessWidget {
                 style: GoogleFonts.dmSerifDisplay(fontSize: 20),
               ),
               Text(
-                ' ' + comida.precio,
+                ' ${comida.precio}',
                 style: GoogleFonts.dmSerifDisplay(fontSize: 20),
               ),
-              Icon(
+              const Icon(
                 Icons.euro_symbol_outlined,
                 size: 10,
               ),

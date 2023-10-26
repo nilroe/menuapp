@@ -111,7 +111,7 @@ class _MenuPageState extends State<MenuPage> {
             child: TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderSide: BorderSide(color: colorPrimario),
                       borderRadius: BorderRadius.circular(20)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: colorSecundario),
