@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:menuapp/Pages/menu_detail.dart';
 import 'package:menuapp/components/button.dart';
 import 'package:menuapp/models/food.dart';
 import 'package:menuapp/temas/colors.dart';
@@ -19,45 +20,75 @@ class _MenuPageState extends State<MenuPage> {
       nombre: 'Burrito',
       precio: '5',
       imagen: 'assets/brocheta.png',
+      detalle:
+          'Nuestro delicioso burrito hecho de tortilla de trigo, con rodajas de tomate, queso feta, lechuga y pollo asado',
+      alergenos: ['Gluten', 'Lactosa'],
       disponible: true,
     ),
     Comida(
       nombre: 'Hamburguesa',
       precio: '5',
       imagen: 'assets/burguer.png',
+      detalle:
+          'hamburguesa doble con queso, bacon, mayonesa de bacon y queso filadelfia',
+      alergenos: ['Gluten', 'Lactosa'],
       disponible: true,
     ),
     Comida(
       nombre: 'Chuletón',
       precio: '15',
       imagen: 'assets/carne-cruda.png',
+      detalle: 'Corte de Rubia Gallega del lomo alto',
+      alergenos: [],
       disponible: false,
     ),
     Comida(
       nombre: 'Tallarines',
       precio: '5',
       imagen: 'assets/chinese-food.png',
+      detalle:
+          'Tallarines de trigo con pollo asado, tiras de pimiento, cebolla y setas shitake',
+      alergenos: ['Gluten'],
       disponible: false,
     ),
     Comida(
       nombre: 'Perrito',
       precio: '5',
       imagen: 'assets/hot-dog.png',
+      detalle:
+          'Un clasico Americano: pan hot-dog, salchicha de cerdo, cebolla crujiente, bacon, ketchup y mostaza',
+      alergenos: ['Gluten'],
       disponible: true,
     ),
     Comida(
       nombre: 'Salmón',
       precio: '8',
       imagen: 'assets/pez.png',
+      detalle: 'Delicioso filete de salmon con patatas panaderas y cebolla',
+      alergenos: [],
       disponible: false,
     ),
     Comida(
       nombre: 'Pizza',
       precio: '8',
       imagen: 'assets/pizza.png',
+      detalle:
+          'Nuestra pizza casera con base de crema agria, queso mozzarella, pollo asado, champiñones, cebolla, bacon y queso de cabra',
+      alergenos: ['Gluten', 'Lactosa'],
       disponible: true,
     ),
   ];
+
+  void detalleTileComida(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetalleTileComida(
+          comida: menuComidas[index],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +129,7 @@ class _MenuPageState extends State<MenuPage> {
                     BotonEstandar(
                       texto: 'CONSEGUIR',
                       onTap: () {},
-                      descuento: true,
+                      icono: Icons.discount_outlined,
                     ),
                   ],
                 ),
@@ -137,6 +168,7 @@ class _MenuPageState extends State<MenuPage> {
             itemCount: menuComidas.length,
             itemBuilder: (context, index) => TileComida(
               comida: menuComidas[index],
+              toque: () => detalleTileComida(index),
             ),
           ))
         ],

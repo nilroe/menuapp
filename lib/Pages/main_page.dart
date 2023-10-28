@@ -53,7 +53,7 @@ class _MainPageState extends State<MainPage> {
                     '/menu',
                   );
                 },
-                descuento: false,
+                icono: Icons.arrow_forward,
               ),
             ],
           ),
