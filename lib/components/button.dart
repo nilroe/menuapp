@@ -3,7 +3,7 @@ import 'package:menuapp/temas/colors.dart';
 
 class BotonEstandar extends StatelessWidget {
   final String texto;
-  final void Function()? onTap;
+  final void Function() onTap;
   final IconData icono;
 
   const BotonEstandar({
@@ -12,14 +12,6 @@ class BotonEstandar extends StatelessWidget {
     required this.onTap,
     required this.icono,
   });
-
-  /*IconData getIcon() {
-    if (descuento == true) {
-      return Icons.discount_outlined;
-    } else {
-      return Icons.arrow_forward;
-    }
-  }*/
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'Pages/carrito.dart';
 import 'Pages/main_page.dart';
 import 'Pages/menu_page.dart';
+import 'models/tienda.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => Tienda(),
+    child: const MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -17,6 +23,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/intro': (context) => const MainPage(),
         '/menu': (context) => const MenuPage(),
+        '/carrito': (context) => const CarritoPage(),
       },
     );
   }

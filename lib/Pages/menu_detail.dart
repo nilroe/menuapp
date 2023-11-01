@@ -3,6 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:menuapp/components/button.dart';
 import 'package:menuapp/models/food.dart';
 import 'package:menuapp/temas/colors.dart';
+import 'package:provider/provider.dart';
+
+import '../models/tienda.dart';
 
 class DetalleTileComida extends StatefulWidget {
   final Comida comida;
@@ -19,17 +22,54 @@ class _DetalleTileComidaState extends State<DetalleTileComida> {
 
   void restarCantidad() {
     setState(() {
-      cantidad--;
+      if (cantidad > 0) {
+        cantidad--;
+      }
     });
   }
 
   void sumarCantidad() {
     setState(() {
-      cantidad++;
+      if (cantidad < 15) {
+        cantidad++;
+      }
     });
   }
 
-  void addCesta() {}
+  void addCesta() {
+    if (cantidad > 0) {
+      final tienda = context.read<Tienda>();
+      tienda.addCarrito(widget.comida, cantidad);
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => AlertDialog(
+          backgroundColor: colorPrimario,
+          content: Text(
+            "Añadido al carrito",
+            style: TextStyle(
+              color: colorTextoPrimario,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          actions: [
+            Center(
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.done,
+                    color: Colors.greenAccent,
+                  )),
+            )
+          ],
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
