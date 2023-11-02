@@ -9,7 +9,8 @@ class Tienda extends ChangeNotifier {
       imagen: 'assets/brocheta.png',
       detalle:
           'Nuestro delicioso burrito hecho de tortilla de trigo, con rodajas de tomate, queso feta, lechuga y pollo asado',
-      alergenos: ['Gluten', 'Lactosa'],
+      gluten: true,
+      lactosa: true,
       disponible: true,
     ),
     Comida(
@@ -18,7 +19,8 @@ class Tienda extends ChangeNotifier {
       imagen: 'assets/burguer.png',
       detalle:
           'hamburguesa doble con queso, bacon, mayonesa de bacon y queso filadelfia',
-      alergenos: ['Gluten', 'Lactosa'],
+      gluten: true,
+      lactosa: true,
       disponible: true,
     ),
     Comida(
@@ -26,7 +28,8 @@ class Tienda extends ChangeNotifier {
       precio: '15,00',
       imagen: 'assets/carne-cruda.png',
       detalle: 'Corte de Rubia Gallega del lomo alto',
-      alergenos: [],
+      gluten: false,
+      lactosa: false,
       disponible: false,
     ),
     Comida(
@@ -35,7 +38,8 @@ class Tienda extends ChangeNotifier {
       imagen: 'assets/chinese-food.png',
       detalle:
           'Tallarines de trigo con pollo asado, tiras de pimiento, cebolla y setas shitake',
-      alergenos: ['Gluten'],
+      gluten: true,
+      lactosa: false,
       disponible: false,
     ),
     Comida(
@@ -44,7 +48,8 @@ class Tienda extends ChangeNotifier {
       imagen: 'assets/hot-dog.png',
       detalle:
           'Un clasico Americano: pan hot-dog, salchicha de cerdo, cebolla crujiente, bacon, ketchup y mostaza',
-      alergenos: ['Gluten'],
+      gluten: true,
+      lactosa: false,
       disponible: true,
     ),
     Comida(
@@ -52,7 +57,8 @@ class Tienda extends ChangeNotifier {
       precio: '8,00',
       imagen: 'assets/pez.png',
       detalle: 'Delicioso filete de salmon con patatas panaderas y cebolla',
-      alergenos: [],
+      gluten: false,
+      lactosa: false,
       disponible: false,
     ),
     Comida(
@@ -61,7 +67,8 @@ class Tienda extends ChangeNotifier {
       imagen: 'assets/pizza.png',
       detalle:
           'Nuestra pizza casera con base de crema agria, queso mozzarella, pollo asado, champiñones, cebolla, bacon y queso de cabra',
-      alergenos: ['Gluten', 'Lactosa'],
+      gluten: true,
+      lactosa: true,
       disponible: true,
     ),
   ];

@@ -3,7 +3,8 @@ class Comida {
   String precio;
   String imagen;
   String detalle;
-  List alergenos;
+  bool gluten;
+  bool lactosa;
   bool disponible;
 
   Comida({
@@ -11,7 +12,8 @@ class Comida {
     required this.precio,
     required this.imagen,
     required this.detalle,
-    required this.alergenos,
+    required this.gluten,
+    required this.lactosa,
     required this.disponible,
   });
 }

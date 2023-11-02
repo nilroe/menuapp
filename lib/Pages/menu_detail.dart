@@ -110,6 +110,64 @@ class _DetalleTileComidaState extends State<DetalleTileComida> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            'Alérgenos',
+            style: GoogleFonts.dmSerifDisplay(
+                fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      'Gluten',
+                      style: GoogleFonts.dmSerifDisplay(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: (widget.comida.gluten == true)
+                              ? Colors.redAccent
+                              : Colors.greenAccent),
+                    ),
+                    Container(
+                      height: 120,
+                      width: 120,
+                      child: (widget.comida.gluten == true)
+                          ? Image.asset('assets/gluten.jpg')
+                          : Image.asset('assets/gluten-free.jpg'),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text(
+                      'Lactosa',
+                      style: GoogleFonts.dmSerifDisplay(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: (widget.comida.lactosa == true)
+                              ? Colors.redAccent
+                              : Colors.greenAccent),
+                    ),
+                    Container(
+                      height: 120,
+                      width: 120,
+                      child: (widget.comida.lactosa == true)
+                          ? Image.asset('assets/lactosa.png')
+                          : Image.asset('assets/lactosa-free.jpg'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
           Container(
             color: colorPrimario,
             padding: const EdgeInsets.all(25),
